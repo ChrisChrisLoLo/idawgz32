@@ -1,0 +1,233 @@
+  units:
+    kx: 5.5
+    ky: 5.5
+    px: kx + 3.5
+    py: ky + 3.5
+    pp: 0.5px # pcb padding
+    pm: pp+0.5 # pcb margin
+    pw: pm+1.5 # case walls
+    kcr: kx/2 + 0.6 # key cap radius
+    kchr: kcr + 0.12 # key cap hole radius
+    kcbr: kchr + 0.4 # key cap base radius
+    kcbhr: kcbr + 0.12 # key cap base hole radius
+    kcsx: kcbr * 2 # key cap slider x
+    kcsy: 2.5 # key cap slider y
+    kcsry: kcsy + 0.4 # key cap slider rail y
+  points:
+    zones:
+      matrix:
+        key:
+          padding: 1px
+          spread: 1px
+        columns:
+          pinky:
+            rows.bottom.skip: true
+            rows.mod.skip: true
+          ring:
+            key:
+              stagger: 0 #5
+            rows.bottom.skip: true
+            rows.mod.skip: true
+          middle:
+            key:
+              stagger: 0 #5
+          index:
+            key:
+              stagger: 0 #5
+          inner:
+            key:
+              stagger: 0 #5
+        rows:
+          mod:
+          bottom:
+          home:
+          top:
+    rotate: -15
+    mirror:
+      ref: matrix_inner_home
+      distance: 19
+  outlines:
+    raw:
+      - what: rectangle
+        where: true
+        size: [kx, ky]
+    keys:
+      - what: rectangle
+        where: true
+        size: [kx-0.5,ky-0.5]
+    key_holes:
+      - what: circle
+        where: true
+        radius: kchr
+    keycaps_top:
+      - what: circle
+        where: true
+        radius: kcr
+    keycaps_bottom:
+      - what: circle
+        where: true
+        radius: kcbr
+    keycaps_slider:
+      - what: rectangle
+        where: true
+        size: [kcsx,kcsy]
+        corner: 0.5
+    keycaps_base_hole:
+      - what: circle
+        where: true
+        radius: kcbhr
+    keycaps_base_hole_rail:
+      - what: rectangle
+        where: true
+        size: [kcbhr*2, kcsry]
+        corner: 0.5
+    key_rails_combo:
+      - name: keycaps_base_hole_rail
+      - operation: add
+        name: key_holes
+    pole_mounts_holes:
+      - what: circle
+        where: /matrix_(pinky|index)_(top|bottom)/
+        adjust.shift: [px/2,-py/2]
+        radius: 0.75 # screws are M1.6, but holes should be smaller
+    pole_mounts:
+      - what: circle
+        where: /matrix_(pinky|index)_(top|bottom)/
+        adjust.shift: [px/2,-py/2]
+        radius: 2
+      - operation: subtract
+        name: pole_mounts_holes
+    board:
+      - what: polygon
+        operation: stack
+        points:
+          - ref: matrix_pinky_top
+            shift: [-pp,pp]
+          - ref: matrix_middle_top
+            shift: [-pp,pp]
+          - ref: mirror_matrix_middle_top
+            shift: [-pp,pp]
+          - ref: mirror_matrix_pinky_top
+            shift: [-pp,pp]
+          - ref: mirror_matrix_pinky_home
+            shift: [-pp,-pp]
+          - ref: mirror_matrix_middle_home
+            shift: [-pp,-pp]
+          - ref: mirror_matrix_middle_mod
+            shift: [-pp,-pp]
+          - ref: mirror_matrix_inner_mod
+            shift: [pp,-pp]
+          - ref: mirror_matrix_inner_bottom
+            shift: [pp,-pp]
+          - ref: matrix_inner_bottom
+            shift: [pp,-pp]
+          - ref: matrix_inner_mod
+            shift: [pp,-pp]
+          - ref: matrix_middle_mod
+            shift: [-pp,-pp]
+          - ref: matrix_middle_home
+            shift: [-pp,-pp]
+          - ref: matrix_pinky_home
+            shift: [-pp,-pp]
+        fillet: 2
+    board_margin:
+      - what: polygon
+        operation: stack
+        points:
+          - ref: matrix_pinky_top
+            shift: [-pm,pm]
+          - ref: matrix_middle_top
+            shift: [-pm,pm]
+          - ref: mirror_matrix_middle_top
+            shift: [-pm,pm]
+          - ref: mirror_matrix_pinky_top
+            shift: [-pm,pm]
+          - ref: mirror_matrix_pinky_home
+            shift: [-pm,-pm]
+          - ref: mirror_matrix_middle_home
+            shift: [-pm,-pm]
+          - ref: mirror_matrix_middle_mod
+            shift: [-pm,-pm]
+          - ref: mirror_matrix_inner_mod
+            shift: [pm,-pm]
+          - ref: mirror_matrix_inner_bottom
+            shift: [pm, -pm]
+          - ref: matrix_inner_bottom
+            shift: [pm, -pm]
+          - ref: matrix_inner_mod
+            shift: [pm,-pm]
+          - ref: matrix_middle_mod
+            shift: [-pm,-pm]
+          - ref: matrix_middle_home
+            shift: [-pm,-pm]
+          - ref: matrix_pinky_home
+            shift: [-pm,-pm]
+        fillet: 2
+    board_walls:
+      - what: polygon
+        operation: stack
+        points:
+          - ref: matrix_pinky_top
+            shift: [-pw,pw]
+          - ref: matrix_middle_top
+            shift: [-pw,pw]
+          - ref: mirror_matrix_middle_top
+            shift: [-pw,pw]
+          - ref: mirror_matrix_pinky_top
+            shift: [-pw,pw]
+          - ref: mirror_matrix_pinky_home
+            shift: [-pw,-pw]
+          - ref: mirror_matrix_middle_home
+            shift: [-pw,-pw]
+          - ref: mirror_matrix_middle_mod
+            shift: [-pw,-pw]
+          - ref: mirror_matrix_inner_mod
+            shift: [pw,-pw]
+          - ref: mirror_matrix_inner_bottom
+            shift: [pw, -pw]
+          - ref: matrix_inner_bottom
+            shift: [pw, -pw]
+          - ref: matrix_inner_mod
+            shift: [pw,-pw]
+          - ref: matrix_middle_mod
+            shift: [-pw,-pw]
+          - ref: matrix_middle_home
+            shift: [-pw,-pw]
+          - ref: matrix_pinky_home
+            shift: [-pw,-pw]
+        fillet: 2
+    # Combination preview showing outline and keys.
+    pcb_combo:
+      - name: board
+      - operation: subtract
+        name: keys
+    keycaps_combo:
+      - name: keycaps_slider
+      - operation: add
+        name: keycaps_top
+      - operation: subtract
+        name: keycaps_top
+    case_combo:
+      - name: board
+      - operation: subtract
+        name: key_rails_combo
+      - operation: add
+        name: key_holes
+    board_margin_combo:
+      - name: board_margin
+      - operation: subtract
+        name: board
+    board_walls_combo:
+      - name: board_walls
+      - operation: subtract
+        name: board_margin
+    complete_combo:
+      - name: board_walls_combo
+      - operation: add
+        name: case_combo
+      - operation: subtract
+        name: pole_mounts
+    complete_combo_2:
+      - name: complete_combo
+      - operation: subtract
+        name: key_holes
