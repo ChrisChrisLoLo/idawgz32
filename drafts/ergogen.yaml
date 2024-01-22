@@ -87,12 +87,12 @@
         name: key_holes
     pole_mounts_holes:
       - what: circle
-        where: /matrix_(pinky|index)_(top|bottom)/
+        where: /(matrix_(pinky|index)_(top|bottom)|matrix_middle_bottom)/
         adjust.shift: [px/2,-py/2]
         radius: 0.75 # screws are M1.6, but holes should be smaller
     pole_mounts:
       - what: circle
-        where: /matrix_(pinky|index)_(top|bottom)/
+        where: /(matrix_(pinky|index)_(top|bottom)|matrix_middle_bottom)/
         adjust.shift: [px/2,-py/2]
         radius: 2
       - operation: subtract
