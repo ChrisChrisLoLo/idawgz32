@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "wch")(type "Legacy")(uri "/Users/chriz/Documents/CAD/idawgz32/pcb/libs/userlib/wch.lib")(options "")(descr ""))
+)

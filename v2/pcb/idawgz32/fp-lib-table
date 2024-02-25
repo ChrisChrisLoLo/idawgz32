@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "userlib")(type "KiCad")(uri "/Users/chriz/Documents/CAD/idawgz32/pcb/libs/userlib")(options "")(descr ""))
+)
