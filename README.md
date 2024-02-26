@@ -9,6 +9,8 @@ An experimental ultraportable and ultra affordable pocket keyboard that costs $5
 # Status
 v0.0 PCBs technically work, though the current smd switches used have a high failure rate and are assumed to be of poor quality. v2.0 PCBs are in progress and will use the EVQP0N02B switch instead, which are known to work well.
 
+I recommend waiting for v2.0 to come out, though v0.0 has some workarounds outlined in my blog post.
+
 Disclaimer is that this design has very low tolerances for its key switches. You will likely need a 3D printer such as a Bambu Lab A1/A1 mini/P1P/P1S and set the slicing layer resolution to 0.08mm. Printers like the Prusa i3/mini may also work, but have not been tested.
 
 # About
