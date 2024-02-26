@@ -2,7 +2,7 @@
 
 ### A mechanical keyboard, in this economy??
 
-An experimental ultraportable and ultra affordable pocket keyboard that costs $5 worth of materials to make. The project goal is to make a keyboard that can be given away as freebies or gifts. Entire PCBA can be produced by JLCPCB. Uses 3D printed keycaps.
+An experimental ultraportable and ultra affordable pocket keyboard that costs $5 worth of materials to make. The project goal is to make a keyboard that can be given away as freebies or gifts. Entire PCBA can be produced by JLCPCB. Uses a CH552 as its MCU, and runs FAK firmware.
 
 ![a photo of an idawgz32](https://raw.githubusercontent.com/ChrisChrisLoLo/idawgz32/main/images/PXL_20240225_225159875.jpg)
 
