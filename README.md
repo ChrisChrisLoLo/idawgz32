@@ -1,6 +1,6 @@
 # idawgz32
 
-### A mechanical keyboard, in _this_ economy??
+### A mechanical keyboard, in this economy??
 
 An experimental ultraportable and ultra affordable pocket keyboard that costs $5 worth of materials to make. The project goal is to make a keyboard that can be given away as freebies or gifts. Entire PCBA can be produced by JLCPCB. Uses 3D printed keycaps.
 
