@@ -9,7 +9,7 @@ An experimental ultraportable and ultra affordable pocket keyboard that costs $5
 # Status
 v2.0 PCBs are working well and is recommended to try out! v0.0 PCBs use a switch that has a high defect rate. the v2.0 switches use a much more reliable switch.
 
-I recommend waiting for v2.0 to come out, though v0.0 has some workarounds outlined in my blog post.
+I recommend using v2.0, though v0.0 has some workarounds outlined in my blog post.
 
 Disclaimer is that this design has very low tolerances for its key switches. You will likely need a 3D printer such as a Bambu Lab A1/A1 mini/P1P/P1S and set the slicing layer resolution to 0.08mm. Printers like the Prusa i3/mini may also work, but have not been tested.
 
