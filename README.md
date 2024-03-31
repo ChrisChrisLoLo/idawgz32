@@ -7,7 +7,7 @@ An experimental ultraportable and ultra affordable pocket keyboard that costs $5
 ![a photo of an idawgz32](https://raw.githubusercontent.com/ChrisChrisLoLo/idawgz32/main/images/PXL_20240225_225159875.jpg)
 
 # Status
-v0.0 PCBs technically work, though the current smd switches used have a high failure rate and are assumed to be of poor quality. v2.0 PCBs are in progress and will use the EVQP0N02B switch instead, which are known to work well.
+v2.0 PCBs are working well and is recommended to try out! v0.0 PCBs use a switch that has a high defect rate. the v2.0 switches use a much more reliable switch.
 
 I recommend waiting for v2.0 to come out, though v0.0 has some workarounds outlined in my blog post.
 
